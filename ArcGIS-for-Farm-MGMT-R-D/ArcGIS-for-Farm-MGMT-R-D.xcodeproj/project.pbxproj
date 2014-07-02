@@ -1,0 +1,491 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5876E799196459B700A5919D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5876E798196459B700A5919D /* Foundation.framework */; };
+		5876E79B196459B700A5919D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5876E79A196459B700A5919D /* CoreGraphics.framework */; };
+		5876E79D196459B700A5919D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5876E79C196459B700A5919D /* UIKit.framework */; };
+		5876E7A3196459B700A5919D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5876E7A1196459B700A5919D /* InfoPlist.strings */; };
+		5876E7A5196459B700A5919D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5876E7A4196459B700A5919D /* main.m */; };
+		5876E7A9196459B700A5919D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5876E7A8196459B700A5919D /* AppDelegate.m */; };
+		5876E7AC196459B700A5919D /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5876E7AA196459B700A5919D /* Main_iPhone.storyboard */; };
+		5876E7AF196459B700A5919D /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5876E7AD196459B700A5919D /* Main_iPad.storyboard */; };
+		5876E7B2196459B700A5919D /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5876E7B1196459B700A5919D /* FirstViewController.m */; };
+		5876E7B5196459B700A5919D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5876E7B4196459B700A5919D /* SecondViewController.m */; };
+		5876E7B7196459B700A5919D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5876E7B6196459B700A5919D /* Images.xcassets */; };
+		5876E7BE196459B700A5919D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5876E7BD196459B700A5919D /* XCTest.framework */; };
+		5876E7BF196459B700A5919D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5876E798196459B700A5919D /* Foundation.framework */; };
+		5876E7C0196459B700A5919D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5876E79C196459B700A5919D /* UIKit.framework */; };
+		5876E7C8196459B700A5919D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5876E7C6196459B700A5919D /* InfoPlist.strings */; };
+		5876E7CA196459B700A5919D /* ArcGIS_for_Farm_MGMT_R_DTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5876E7C9196459B700A5919D /* ArcGIS_for_Farm_MGMT_R_DTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5876E7C1196459B700A5919D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5876E78D196459B700A5919D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5876E794196459B700A5919D;
+			remoteInfo = "ArcGIS-for-Farm-MGMT-R-D";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5876E795196459B700A5919D /* ArcGIS-for-Farm-MGMT-R-D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ArcGIS-for-Farm-MGMT-R-D.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5876E798196459B700A5919D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5876E79A196459B700A5919D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5876E79C196459B700A5919D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5876E7A0196459B700A5919D /* ArcGIS-for-Farm-MGMT-R-D-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ArcGIS-for-Farm-MGMT-R-D-Info.plist"; sourceTree = "<group>"; };
+		5876E7A2196459B700A5919D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5876E7A4196459B700A5919D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5876E7A6196459B700A5919D /* ArcGIS-for-Farm-MGMT-R-D-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ArcGIS-for-Farm-MGMT-R-D-Prefix.pch"; sourceTree = "<group>"; };
+		5876E7A7196459B700A5919D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5876E7A8196459B700A5919D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5876E7AB196459B700A5919D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		5876E7AE196459B700A5919D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		5876E7B0196459B700A5919D /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		5876E7B1196459B700A5919D /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		5876E7B3196459B700A5919D /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		5876E7B4196459B700A5919D /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		5876E7B6196459B700A5919D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5876E7BC196459B700A5919D /* ArcGIS-for-Farm-MGMT-R-DTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ArcGIS-for-Farm-MGMT-R-DTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5876E7BD196459B700A5919D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		5876E7C5196459B700A5919D /* ArcGIS-for-Farm-MGMT-R-DTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ArcGIS-for-Farm-MGMT-R-DTests-Info.plist"; sourceTree = "<group>"; };
+		5876E7C7196459B700A5919D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5876E7C9196459B700A5919D /* ArcGIS_for_Farm_MGMT_R_DTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArcGIS_for_Farm_MGMT_R_DTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5876E792196459B700A5919D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5876E79B196459B700A5919D /* CoreGraphics.framework in Frameworks */,
+				5876E79D196459B700A5919D /* UIKit.framework in Frameworks */,
+				5876E799196459B700A5919D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5876E7B9196459B700A5919D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5876E7BE196459B700A5919D /* XCTest.framework in Frameworks */,
+				5876E7C0196459B700A5919D /* UIKit.framework in Frameworks */,
+				5876E7BF196459B700A5919D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5876E78C196459B700A5919D = {
+			isa = PBXGroup;
+			children = (
+				5876E79E196459B700A5919D /* ArcGIS-for-Farm-MGMT-R-D */,
+				5876E7C3196459B700A5919D /* ArcGIS-for-Farm-MGMT-R-DTests */,
+				5876E797196459B700A5919D /* Frameworks */,
+				5876E796196459B700A5919D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5876E796196459B700A5919D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5876E795196459B700A5919D /* ArcGIS-for-Farm-MGMT-R-D.app */,
+				5876E7BC196459B700A5919D /* ArcGIS-for-Farm-MGMT-R-DTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5876E797196459B700A5919D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5876E798196459B700A5919D /* Foundation.framework */,
+				5876E79A196459B700A5919D /* CoreGraphics.framework */,
+				5876E79C196459B700A5919D /* UIKit.framework */,
+				5876E7BD196459B700A5919D /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5876E79E196459B700A5919D /* ArcGIS-for-Farm-MGMT-R-D */ = {
+			isa = PBXGroup;
+			children = (
+				5876E7A7196459B700A5919D /* AppDelegate.h */,
+				5876E7A8196459B700A5919D /* AppDelegate.m */,
+				5876E7AA196459B700A5919D /* Main_iPhone.storyboard */,
+				5876E7AD196459B700A5919D /* Main_iPad.storyboard */,
+				5876E7B0196459B700A5919D /* FirstViewController.h */,
+				5876E7B1196459B700A5919D /* FirstViewController.m */,
+				5876E7B3196459B700A5919D /* SecondViewController.h */,
+				5876E7B4196459B700A5919D /* SecondViewController.m */,
+				5876E7B6196459B700A5919D /* Images.xcassets */,
+				5876E79F196459B700A5919D /* Supporting Files */,
+			);
+			path = "ArcGIS-for-Farm-MGMT-R-D";
+			sourceTree = "<group>";
+		};
+		5876E79F196459B700A5919D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5876E7A0196459B700A5919D /* ArcGIS-for-Farm-MGMT-R-D-Info.plist */,
+				5876E7A1196459B700A5919D /* InfoPlist.strings */,
+				5876E7A4196459B700A5919D /* main.m */,
+				5876E7A6196459B700A5919D /* ArcGIS-for-Farm-MGMT-R-D-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5876E7C3196459B700A5919D /* ArcGIS-for-Farm-MGMT-R-DTests */ = {
+			isa = PBXGroup;
+			children = (
+				5876E7C9196459B700A5919D /* ArcGIS_for_Farm_MGMT_R_DTests.m */,
+				5876E7C4196459B700A5919D /* Supporting Files */,
+			);
+			path = "ArcGIS-for-Farm-MGMT-R-DTests";
+			sourceTree = "<group>";
+		};
+		5876E7C4196459B700A5919D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5876E7C5196459B700A5919D /* ArcGIS-for-Farm-MGMT-R-DTests-Info.plist */,
+				5876E7C6196459B700A5919D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5876E794196459B700A5919D /* ArcGIS-for-Farm-MGMT-R-D */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5876E7CD196459B700A5919D /* Build configuration list for PBXNativeTarget "ArcGIS-for-Farm-MGMT-R-D" */;
+			buildPhases = (
+				5876E791196459B700A5919D /* Sources */,
+				5876E792196459B700A5919D /* Frameworks */,
+				5876E793196459B700A5919D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ArcGIS-for-Farm-MGMT-R-D";
+			productName = "ArcGIS-for-Farm-MGMT-R-D";
+			productReference = 5876E795196459B700A5919D /* ArcGIS-for-Farm-MGMT-R-D.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5876E7BB196459B700A5919D /* ArcGIS-for-Farm-MGMT-R-DTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5876E7D0196459B700A5919D /* Build configuration list for PBXNativeTarget "ArcGIS-for-Farm-MGMT-R-DTests" */;
+			buildPhases = (
+				5876E7B8196459B700A5919D /* Sources */,
+				5876E7B9196459B700A5919D /* Frameworks */,
+				5876E7BA196459B700A5919D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5876E7C2196459B700A5919D /* PBXTargetDependency */,
+			);
+			name = "ArcGIS-for-Farm-MGMT-R-DTests";
+			productName = "ArcGIS-for-Farm-MGMT-R-DTests";
+			productReference = 5876E7BC196459B700A5919D /* ArcGIS-for-Farm-MGMT-R-DTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5876E78D196459B700A5919D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = ESRI;
+				TargetAttributes = {
+					5876E7BB196459B700A5919D = {
+						TestTargetID = 5876E794196459B700A5919D;
+					};
+				};
+			};
+			buildConfigurationList = 5876E790196459B700A5919D /* Build configuration list for PBXProject "ArcGIS-for-Farm-MGMT-R-D" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5876E78C196459B700A5919D;
+			productRefGroup = 5876E796196459B700A5919D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5876E794196459B700A5919D /* ArcGIS-for-Farm-MGMT-R-D */,
+				5876E7BB196459B700A5919D /* ArcGIS-for-Farm-MGMT-R-DTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5876E793196459B700A5919D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5876E7AF196459B700A5919D /* Main_iPad.storyboard in Resources */,
+				5876E7B7196459B700A5919D /* Images.xcassets in Resources */,
+				5876E7AC196459B700A5919D /* Main_iPhone.storyboard in Resources */,
+				5876E7A3196459B700A5919D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5876E7BA196459B700A5919D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5876E7C8196459B700A5919D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5876E791196459B700A5919D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5876E7B5196459B700A5919D /* SecondViewController.m in Sources */,
+				5876E7A9196459B700A5919D /* AppDelegate.m in Sources */,
+				5876E7B2196459B700A5919D /* FirstViewController.m in Sources */,
+				5876E7A5196459B700A5919D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5876E7B8196459B700A5919D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5876E7CA196459B700A5919D /* ArcGIS_for_Farm_MGMT_R_DTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5876E7C2196459B700A5919D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5876E794196459B700A5919D /* ArcGIS-for-Farm-MGMT-R-D */;
+			targetProxy = 5876E7C1196459B700A5919D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5876E7A1196459B700A5919D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5876E7A2196459B700A5919D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5876E7AA196459B700A5919D /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5876E7AB196459B700A5919D /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		5876E7AD196459B700A5919D /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5876E7AE196459B700A5919D /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		5876E7C6196459B700A5919D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5876E7C7196459B700A5919D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5876E7CB196459B700A5919D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5876E7CC196459B700A5919D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5876E7CE196459B700A5919D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ArcGIS-for-Farm-MGMT-R-D/ArcGIS-for-Farm-MGMT-R-D-Prefix.pch";
+				INFOPLIST_FILE = "ArcGIS-for-Farm-MGMT-R-D/ArcGIS-for-Farm-MGMT-R-D-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5876E7CF196459B700A5919D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ArcGIS-for-Farm-MGMT-R-D/ArcGIS-for-Farm-MGMT-R-D-Prefix.pch";
+				INFOPLIST_FILE = "ArcGIS-for-Farm-MGMT-R-D/ArcGIS-for-Farm-MGMT-R-D-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		5876E7D1196459B700A5919D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ArcGIS-for-Farm-MGMT-R-D.app/ArcGIS-for-Farm-MGMT-R-D";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ArcGIS-for-Farm-MGMT-R-D/ArcGIS-for-Farm-MGMT-R-D-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ArcGIS-for-Farm-MGMT-R-DTests/ArcGIS-for-Farm-MGMT-R-DTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		5876E7D2196459B700A5919D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ArcGIS-for-Farm-MGMT-R-D.app/ArcGIS-for-Farm-MGMT-R-D";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ArcGIS-for-Farm-MGMT-R-D/ArcGIS-for-Farm-MGMT-R-D-Prefix.pch";
+				INFOPLIST_FILE = "ArcGIS-for-Farm-MGMT-R-DTests/ArcGIS-for-Farm-MGMT-R-DTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5876E790196459B700A5919D /* Build configuration list for PBXProject "ArcGIS-for-Farm-MGMT-R-D" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5876E7CB196459B700A5919D /* Debug */,
+				5876E7CC196459B700A5919D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5876E7CD196459B700A5919D /* Build configuration list for PBXNativeTarget "ArcGIS-for-Farm-MGMT-R-D" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5876E7CE196459B700A5919D /* Debug */,
+				5876E7CF196459B700A5919D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5876E7D0196459B700A5919D /* Build configuration list for PBXNativeTarget "ArcGIS-for-Farm-MGMT-R-DTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5876E7D1196459B700A5919D /* Debug */,
+				5876E7D2196459B700A5919D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5876E78D196459B700A5919D /* Project object */;
+}
