@@ -15,7 +15,7 @@
 		5876E7A9196459B700A5919D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5876E7A8196459B700A5919D /* AppDelegate.m */; };
 		5876E7AC196459B700A5919D /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5876E7AA196459B700A5919D /* Main_iPhone.storyboard */; };
 		5876E7AF196459B700A5919D /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5876E7AD196459B700A5919D /* Main_iPad.storyboard */; };
-		5876E7B2196459B700A5919D /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5876E7B1196459B700A5919D /* FirstViewController.m */; };
+		5876E7B2196459B700A5919D /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5876E7B1196459B700A5919D /* MapViewController.m */; };
 		5876E7B5196459B700A5919D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5876E7B4196459B700A5919D /* SecondViewController.m */; };
 		5876E7B7196459B700A5919D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5876E7B6196459B700A5919D /* Images.xcassets */; };
 		5876E7BE196459B700A5919D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5876E7BD196459B700A5919D /* XCTest.framework */; };
@@ -23,6 +23,8 @@
 		5876E7C0196459B700A5919D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5876E79C196459B700A5919D /* UIKit.framework */; };
 		5876E7C8196459B700A5919D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5876E7C6196459B700A5919D /* InfoPlist.strings */; };
 		5876E7CA196459B700A5919D /* ArcGIS_for_Farm_MGMT_R_DTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5876E7C9196459B700A5919D /* ArcGIS_for_Farm_MGMT_R_DTests.m */; };
+		5876E7D419645EE100A5919D /* ArcGIS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5876E7D319645EE100A5919D /* ArcGIS.bundle */; };
+		5876E7D719646D9400A5919D /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 5876E7D619646D9400A5919D /* Weather.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +50,8 @@
 		5876E7A8196459B700A5919D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5876E7AB196459B700A5919D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		5876E7AE196459B700A5919D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		5876E7B0196459B700A5919D /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		5876E7B1196459B700A5919D /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		5876E7B0196459B700A5919D /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		5876E7B1196459B700A5919D /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		5876E7B3196459B700A5919D /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		5876E7B4196459B700A5919D /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		5876E7B6196459B700A5919D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -58,6 +60,9 @@
 		5876E7C5196459B700A5919D /* ArcGIS-for-Farm-MGMT-R-DTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ArcGIS-for-Farm-MGMT-R-DTests-Info.plist"; sourceTree = "<group>"; };
 		5876E7C7196459B700A5919D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5876E7C9196459B700A5919D /* ArcGIS_for_Farm_MGMT_R_DTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArcGIS_for_Farm_MGMT_R_DTests.m; sourceTree = "<group>"; };
+		5876E7D319645EE100A5919D /* ArcGIS.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ArcGIS.bundle; sourceTree = "<group>"; };
+		5876E7D519646D9400A5919D /* Weather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
+		5876E7D619646D9400A5919D /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +92,7 @@
 		5876E78C196459B700A5919D = {
 			isa = PBXGroup;
 			children = (
+				5876E7D319645EE100A5919D /* ArcGIS.bundle */,
 				5876E79E196459B700A5919D /* ArcGIS-for-Farm-MGMT-R-D */,
 				5876E7C3196459B700A5919D /* ArcGIS-for-Farm-MGMT-R-DTests */,
 				5876E797196459B700A5919D /* Frameworks */,
@@ -121,8 +127,10 @@
 				5876E7A8196459B700A5919D /* AppDelegate.m */,
 				5876E7AA196459B700A5919D /* Main_iPhone.storyboard */,
 				5876E7AD196459B700A5919D /* Main_iPad.storyboard */,
-				5876E7B0196459B700A5919D /* FirstViewController.h */,
-				5876E7B1196459B700A5919D /* FirstViewController.m */,
+				5876E7D519646D9400A5919D /* Weather.h */,
+				5876E7D619646D9400A5919D /* Weather.m */,
+				5876E7B0196459B700A5919D /* MapViewController.h */,
+				5876E7B1196459B700A5919D /* MapViewController.m */,
 				5876E7B3196459B700A5919D /* SecondViewController.h */,
 				5876E7B4196459B700A5919D /* SecondViewController.m */,
 				5876E7B6196459B700A5919D /* Images.xcassets */,
@@ -240,6 +248,7 @@
 				5876E7B7196459B700A5919D /* Images.xcassets in Resources */,
 				5876E7AC196459B700A5919D /* Main_iPhone.storyboard in Resources */,
 				5876E7A3196459B700A5919D /* InfoPlist.strings in Resources */,
+				5876E7D419645EE100A5919D /* ArcGIS.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,8 +269,9 @@
 			files = (
 				5876E7B5196459B700A5919D /* SecondViewController.m in Sources */,
 				5876E7A9196459B700A5919D /* AppDelegate.m in Sources */,
-				5876E7B2196459B700A5919D /* FirstViewController.m in Sources */,
+				5876E7B2196459B700A5919D /* MapViewController.m in Sources */,
 				5876E7A5196459B700A5919D /* main.m in Sources */,
+				5876E7D719646D9400A5919D /* Weather.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,9 +406,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = "$(HOME)/Library/SDKs/ArcGIS/iOS/";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ArcGIS-for-Farm-MGMT-R-D/ArcGIS-for-Farm-MGMT-R-D-Prefix.pch";
 				INFOPLIST_FILE = "ArcGIS-for-Farm-MGMT-R-D/ArcGIS-for-Farm-MGMT-R-D-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					ArcGIS,
+					"-l",
+					"c++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -409,9 +427,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = "$(HOME)/Library/SDKs/ArcGIS/iOS/";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ArcGIS-for-Farm-MGMT-R-D/ArcGIS-for-Farm-MGMT-R-D-Prefix.pch";
 				INFOPLIST_FILE = "ArcGIS-for-Farm-MGMT-R-D/ArcGIS-for-Farm-MGMT-R-D-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					ArcGIS,
+					"-l",
+					"c++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
