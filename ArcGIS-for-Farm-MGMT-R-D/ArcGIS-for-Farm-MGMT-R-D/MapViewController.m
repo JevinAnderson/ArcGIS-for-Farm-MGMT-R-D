@@ -15,6 +15,8 @@
 @property (strong, nonatomic) AGSWebMap *webMap;
 @property (strong, nonatomic) AGSGraphicsLayer *graphicsLayer;
 @property (weak, nonatomic) AGSGraphic *currentGraphic;
+@property unsigned long currentFeatureId;
+@property double latitude, longitude;
 
 @property (strong, nonatomic) Weather *weather;
 
@@ -31,7 +33,7 @@
     _webMap = [[AGSWebMap alloc] initWithItemId:@"0ab0004e243641568713ba968d1c424a" credential:nil];
     _webMap.delegate = self;
     
-    _weather = [Weather new];
+    _weather = [Weather sharedInstance];
     _weather.delegate = self;
 }
 
@@ -52,22 +54,6 @@
 
 }
 
--(void)webMap:(AGSWebMap*)wm didLoadLayer:(AGSLayer*)layer
-{
-    
-}
-
--(void)webMap:(AGSWebMap*)wm didFailToLoadLayer:(NSString*)layerTitle url:(NSURL*)url baseLayer:(BOOL)baseLayer federated:(BOOL)federated withError:(NSError*)error
-{
-    NSLog(@"Error while loading layer: %@",[error localizedDescription]);
-    
-    //you can skip loading this layer
-    //[self.webMap continueOpenAndSkipCurrentLayer];
-    
-    //or you can try loading it with proper credentials if the error was security related
-    //[self.webMap continueOpenWithCredential:credential];
-}
-
 -(BOOL)callout:(AGSCallout *)callout willShowForFeature:(id<AGSFeature>)feature layer:(AGSLayer<AGSHitTestable> *)layer mapPoint:(AGSPoint *)mapPoint
 {
     AGSGeometry *geometry = feature.geometry;
@@ -81,12 +67,31 @@
     
     AGSSpatialReference *webRef = [[AGSSpatialReference alloc] initWithWKID:WKID_WGS84];
     AGSPoint *newPoint = (AGSPoint *)[[AGSGeometryEngine defaultGeometryEngine] projectGeometry:geometry.envelope.center toSpatialReference:webRef];
-    double latitude = newPoint.y;
-    double longitude = newPoint.x;
-    NSLog(@"Lat: <%lf> - Lon: <%lf>", latitude, longitude);
+    _currentFeatureId = (unsigned long)[feature featureId];
+    _latitude = newPoint.y;
+    _longitude = newPoint.x;
+    NSLog(@"Lat: <%lf> - Lon: <%lf>", _latitude, _longitude);
     
-    [_weather getHistoricalWeatherForLatitude:latitude andLongitude:longitude];
+    
+    [self startDataFetchingCycle];
+    
     return NO;
+}
+
+-(void)startDataFetchingCycle
+{
+    static BOOL alreadyStartedFetching = NO;
+    if (!alreadyStartedFetching) {
+        alreadyStartedFetching = YES;
+        [NSTimer scheduledTimerWithTimeInterval:30.0f target:self selector:@selector(fetchWeather:) userInfo:nil repeats:YES];
+    }
+}
+
+-(void)fetchWeather:(NSTimer *)timer
+{
+    [_weather getHistoricalWeatherForFeature:[NSString stringWithFormat:@"%lu", _currentFeatureId]
+                                    latitude:_latitude
+                                andLongitude:_longitude];
 }
 
 -(void)weather:(Weather *)weather failedToGetHistoricalWeatherWithError:(NSError *)error
@@ -96,7 +101,7 @@
 
 -(void)weather:(Weather *)weather didSucceedInGettingHistoricalInfo:(NSDictionary *)historicalInfo
 {
-    NSLog(@"Historical Information: %@", historicalInfo);
+    //NSLog(@"Historical Information: %@", historicalInfo);
 }
 
 -(void)didClickAccessoryButtonForCallout:(AGSCallout *)callout

@@ -13,8 +13,11 @@
 @interface Weather : NSObject
 
 @property (nonatomic, strong) id delegate;
+@property (nonatomic, strong) NSMutableDictionary *weatherDictionary;
 
--(void)getHistoricalWeatherForLatitude:(double)latitude andLongitude:(double)longitude;
++(instancetype)sharedInstance;
+
+-(void)getHistoricalWeatherForFeature:(NSString *)featureId latitude:(double)latitude andLongitude:(double)longitude;
 
 @end
 

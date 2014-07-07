@@ -7,42 +7,116 @@
 //
 
 #import "Weather.h"
+#import <CoreData/CoreData.h>
 
 @interface Weather ()
+
+@property (nonatomic, strong) NSString *featureID;
 
 @end
 
 @implementation Weather
 
--(void)getHistoricalWeatherForLatitude:(double)latitude andLongitude:(double)longitude
++(instancetype)sharedInstance
 {
-    NSURL *url = [self createHistoricalWeatherUrlFromLatitude:latitude andLongitude:longitude];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    static Weather *weather;
     
-//    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-//        if (connectionError) {
-//            if ([_delegate respondsToSelector:@selector(weather:failedToGetHistoricalWeatherWithError:)]) {
-//                [_delegate weather:self failedToGetHistoricalWeatherWithError:nil];
-//            }else{
-//                NSLog(@"Weather collection error: %@", connectionError);
-//            }
-//        }else{
-//            NSDictionary *historicalInfo = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:NULL];
-//            [_delegate weather:self didSucceedInGettingHistoricalInfo:historicalInfo];
-//        }
-//    }];
+    if (!weather) {
+        weather = [[Weather alloc] initPrivate];
+    }
+    
+    return weather;
 }
 
--(NSURL *)createHistoricalWeatherUrlFromLatitude:(double)latitude andLongitude:(double)longitude
+-(instancetype)initPrivate
+{
+    self = [super init];
+    
+    if (self) {
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        NSDictionary *weatherDictionary = [userDefaults dictionaryForKey:@"PersonalWeatherInformation"];
+        if (weatherDictionary) {
+            _weatherDictionary = [[NSMutableDictionary alloc] initWithDictionary:weatherDictionary];
+        }else{
+            _weatherDictionary = [NSMutableDictionary new];
+        }
+    }
+    
+    return self;
+}
+
+-(instancetype)init
+{
+    @throw [NSException exceptionWithName:@"Bad init of a singleton class"
+                                   reason:@"Use +[Weather sharedInstance]"
+                                 userInfo:nil];
+    return nil;
+}
+
+-(void)getHistoricalWeatherForFeature:(NSString *)featureId latitude:(double)latitude andLongitude:(double)longitude
+{
+    if (!_weatherDictionary[featureId]) {
+        _weatherDictionary[featureId] = [NSMutableArray new];
+    }
+    
+    NSURL *url = [self createHistoricalWeatherUrlForFeature:featureId withLatitude:latitude andLongitude:longitude];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if (connectionError) {
+            if ([_delegate respondsToSelector:@selector(weather:failedToGetHistoricalWeatherWithError:)]) {
+                [_delegate weather:self failedToGetHistoricalWeatherWithError:nil];
+            }else{
+                NSLog(@"Weather collection error: %@", connectionError);
+            }
+        }else{
+            NSDictionary *historicalInfo = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:NULL];
+            [(NSMutableArray *)_weatherDictionary[featureId] addObject:historicalInfo];
+            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+            [userDefaults setObject:_weatherDictionary forKey:@"PersonalWeatherInformation"];
+            [userDefaults synchronize];
+            [_delegate weather:self didSucceedInGettingHistoricalInfo:historicalInfo];
+        }
+    }];
+}
+
+-(NSURL *)createHistoricalWeatherUrlForFeature:(NSString *)featureId withLatitude:(double)latitude andLongitude:(double)longitude
 {
     NSString *baseUrlStr = @"http://api.wunderground.com/api/";
     NSString *apiKey = @"778edd5449d7cab9";
-    NSString *optionsStr = @"/history_20060405/q/";
+    NSString *optionsStr = [self createOptionsStrForFeature:featureId];
     NSString *urlString = [NSString stringWithFormat:@"%@%@%@%lf,%lf.json", baseUrlStr, apiKey, optionsStr, latitude, longitude];
     
     NSLog(@"WEATHER LOOKUP: %@", urlString);
     
     return [NSURL URLWithString:urlString];
+}
+
+-(NSString *)createOptionsStrForFeature:(NSString *)featureId
+{
+    NSDictionary *lastWeather = [(NSMutableArray *)_weatherDictionary[featureId] lastObject];
+    NSString *optionsStr;
+    NSDateComponents *components;
+    NSDate *date;
+    
+    if (lastWeather) {
+        components = [NSDateComponents new];
+        [components setDay:[(NSString *)lastWeather[@"history"][@"date"][@"mday"] integerValue]];
+        [components setMonth:[(NSString *)lastWeather[@"history"][@"date"][@"mon"] integerValue]];
+        [components setYear:[(NSString *)lastWeather[@"history"][@"date"][@"year"] integerValue]];
+        date = [[NSCalendar currentCalendar] dateFromComponents:components];
+        date = [date dateByAddingTimeInterval:-24*60*60];
+    }else{
+        date = [NSDate date];
+    }
+    
+    components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay|NSCalendarUnitMonth|NSCalendarUnitYear fromDate:date];
+    optionsStr = [NSString stringWithFormat:@"/history_%ld%02ld%02ld/q/", (long)components.year, (long)components.month, (long)components.day];
+    
+    NSLog(@"Options String: %@", optionsStr);
+    
+    return optionsStr;
 }
 
 @end

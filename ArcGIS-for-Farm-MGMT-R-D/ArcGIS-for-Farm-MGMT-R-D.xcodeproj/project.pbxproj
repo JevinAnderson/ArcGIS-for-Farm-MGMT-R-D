@@ -25,6 +25,7 @@
 		5876E7CA196459B700A5919D /* ArcGIS_for_Farm_MGMT_R_DTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5876E7C9196459B700A5919D /* ArcGIS_for_Farm_MGMT_R_DTests.m */; };
 		5876E7D419645EE100A5919D /* ArcGIS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5876E7D319645EE100A5919D /* ArcGIS.bundle */; };
 		5876E7D719646D9400A5919D /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 5876E7D619646D9400A5919D /* Weather.m */; };
+		587B1367196B392C00D7C21C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587B1366196B392B00D7C21C /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		5876E7D319645EE100A5919D /* ArcGIS.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ArcGIS.bundle; sourceTree = "<group>"; };
 		5876E7D519646D9400A5919D /* Weather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
 		5876E7D619646D9400A5919D /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
+		587B1366196B392B00D7C21C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				587B1367196B392C00D7C21C /* CoreData.framework in Frameworks */,
 				5876E79B196459B700A5919D /* CoreGraphics.framework in Frameworks */,
 				5876E79D196459B700A5919D /* UIKit.framework in Frameworks */,
 				5876E799196459B700A5919D /* Foundation.framework in Frameworks */,
@@ -112,6 +115,7 @@
 		5876E797196459B700A5919D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				587B1366196B392B00D7C21C /* CoreData.framework */,
 				5876E798196459B700A5919D /* Foundation.framework */,
 				5876E79A196459B700A5919D /* CoreGraphics.framework */,
 				5876E79C196459B700A5919D /* UIKit.framework */,
@@ -502,6 +506,7 @@
 				5876E7CF196459B700A5919D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5876E7D0196459B700A5919D /* Build configuration list for PBXNativeTarget "ArcGIS-for-Farm-MGMT-R-DTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +515,7 @@
 				5876E7D2196459B700A5919D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
