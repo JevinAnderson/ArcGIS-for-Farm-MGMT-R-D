@@ -9,11 +9,19 @@
 #import "WeatherGraphController.h"
 #import "JBBarChartView.h"
 #import "Weather.h"
+/*
+ Taken from JBChart sample app
+ */
+#define UIColorFromHex(hex) [UIColor colorWithRed:((float)((hex & 0xFF0000) >> 16))/255.0 green:((float)((hex & 0xFF00) >> 8))/255.0 blue:((float)(hex & 0xFF))/255.0 alpha:1.0]
+
 
 @interface WeatherGraphController ()<JBBarChartViewDataSource, JBBarChartViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *barChartContainer;
+@property (weak, nonatomic) IBOutlet UIView *statisticDisplayView;
+@property (weak, nonatomic) IBOutlet UILabel *inchesLabel;
 @property (strong, nonatomic) JBBarChartView *barChartView;
+@property (weak, nonatomic) IBOutlet UILabel *dateRangeLabel;
 @property (weak, nonatomic) Weather *weather;
 
 @end
@@ -24,6 +32,7 @@
 {
     [super viewDidLoad];
     _weather = [Weather sharedInstance];
+    _statisticDisplayView.hidden = YES;
     
     JBBarChartView *barChartView = [JBBarChartView new];
     barChartView.delegate = self;
@@ -38,6 +47,7 @@
 
 -(void)reloadData
 {
+    _dateRangeLabel.text = ([_weather.startYear isEqualToString:_weather.endYear]) ? _weather.startYear : [NSString stringWithFormat:@"%@ - %@", _weather.startYear, _weather.endYear];
     [_barChartView reloadData];
 }
 
@@ -75,22 +85,33 @@
 
 -(UIColor *)barChartView:(JBBarChartView *)barChartView colorForBarViewAtIndex:(NSUInteger)index
 {
-    return [UIColor blueColor];
+    return (index % 2 == 0) ? UIColorFromHex(0x08bcef) : UIColorFromHex(0x34b234);
 }
 
 - (UIColor *)barSelectionColorForBarChartView:(JBBarChartView *)barChartView
 {
-    return [UIColor greenColor];
+    return [UIColor whiteColor];
 }
 
 - (void)barChartView:(JBBarChartView *)barChartView didSelectBarAtIndex:(NSUInteger)index touchPoint:(CGPoint)touchPoint
 {
-    
+    _statisticDisplayView.hidden = NO;
+    NSLog(@"Did select bar at index: %02lu", (unsigned long)index);
+    NSString *month = [NSString stringWithFormat:@"%02lu", (unsigned long)index + 1];
+    if (_weather.monthlyStatistics[month]) {
+        CGFloat numberOfDaysRecorded = [_weather.monthlyStatistics[month][0] floatValue];
+        CGFloat totalPrecip = [_weather.monthlyStatistics[month][1] floatValue];
+        
+        _inchesLabel.text = [NSString stringWithFormat:@"%.2f in", totalPrecip / numberOfDaysRecorded];
+    }else{
+        _inchesLabel.text = [NSString stringWithFormat:@"N/A"];
+    }
+
 }
 
 - (void)didUnselectBarChartView:(JBBarChartView *)barChartView
 {
-    NSLog(@"Unselected bar chart view");
+    _statisticDisplayView.hidden = YES;
 }
 
 @end

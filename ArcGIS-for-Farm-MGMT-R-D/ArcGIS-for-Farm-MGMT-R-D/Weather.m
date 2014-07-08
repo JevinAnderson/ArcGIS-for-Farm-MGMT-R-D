@@ -145,6 +145,8 @@
             _monthlyStatistics[month][1] = [NSNumber numberWithFloat:([(NSNumber *)_monthlyStatistics[month][1] floatValue] + [precip floatValue])];
         }
     }
+    _startYear = [historicalInformationArray lastObject][@"history"][@"dailysummary"][0][@"date"][@"year"];
+    _endYear = [historicalInformationArray firstObject][@"history"][@"dailysummary"][0][@"date"][@"year"];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"MonthlyWeatherStatisticsHaveBeenUpdated" object:self];
 }

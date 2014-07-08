@@ -15,7 +15,7 @@
 @property (nonatomic, strong) id delegate;
 @property (nonatomic, strong) NSString *lastFeatureSearchedFor;
 @property (nonatomic, strong) NSMutableDictionary *weatherDictionary;
-@property (nonatomic, strong) NSDate *startDate, *endDate;
+@property (nonatomic, strong) NSString *startYear, *endYear;
 @property (nonatomic, strong) NSMutableDictionary *monthlyStatistics;
 
 +(instancetype)sharedInstance;
