@@ -55,6 +55,11 @@
 
 -(void)getHistoricalWeatherForFeature:(NSString *)featureId latitude:(double)latitude andLongitude:(double)longitude
 {
+    if (![featureId isEqualToString:_lastFeatureSearchedFor]) {
+        [self calculateStaticsForFeatureId:featureId];
+    }
+    _lastFeatureSearchedFor = featureId;
+    
     if (!_weatherDictionary[featureId]) {
         _weatherDictionary[featureId] = [NSMutableArray new];
     }
@@ -117,6 +122,31 @@
     NSLog(@"Options String: %@", optionsStr);
     
     return optionsStr;
+}
+
+-(void)calculateStaticsForFeatureId:(NSString *)featureId
+{
+    _monthlyStatistics = [NSMutableDictionary new];
+    
+    NSMutableArray *historicalInformationArray = _weatherDictionary[featureId];
+    for (NSDictionary *historicalInfo in historicalInformationArray) {
+        NSLog(@"Month: %@", historicalInfo[@"history"][@"dailysummary"][0][@"date"][@"mon"]);
+        NSLog(@"Precipitation: %@", historicalInfo[@"history"][@"dailysummary"][0][@"precipi"]);
+        NSString *month = historicalInfo[@"history"][@"dailysummary"][0][@"date"][@"mon"];
+        NSString *precip = historicalInfo[@"history"][@"dailysummary"][0][@"precipi"];
+        if ([precip isEqualToString:@"T"]) {
+            continue;
+        }
+        
+        if (!_monthlyStatistics[month]) {
+            _monthlyStatistics[month] = [NSMutableArray arrayWithArray:@[@1, [NSNumber numberWithFloat:[precip floatValue]]]];
+        }else{
+            _monthlyStatistics[month][0] = [NSNumber numberWithInt:([(NSNumber *)_monthlyStatistics[month][0] intValue] + 1)];
+            _monthlyStatistics[month][1] = [NSNumber numberWithFloat:([(NSNumber *)_monthlyStatistics[month][1] floatValue] + [precip floatValue])];
+        }
+    }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MonthlyWeatherStatisticsHaveBeenUpdated" object:self];
 }
 
 @end

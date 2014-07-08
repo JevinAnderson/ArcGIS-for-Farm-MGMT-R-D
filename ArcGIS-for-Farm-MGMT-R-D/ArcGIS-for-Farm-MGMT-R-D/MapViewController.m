@@ -83,7 +83,7 @@
     static BOOL alreadyStartedFetching = NO;
     if (!alreadyStartedFetching) {
         alreadyStartedFetching = YES;
-        [NSTimer scheduledTimerWithTimeInterval:30.0f target:self selector:@selector(fetchWeather:) userInfo:nil repeats:YES];
+        [NSTimer scheduledTimerWithTimeInterval:60.0f target:self selector:@selector(fetchWeather:) userInfo:nil repeats:YES];
     }
 }
 
@@ -101,7 +101,13 @@
 
 -(void)weather:(Weather *)weather didSucceedInGettingHistoricalInfo:(NSDictionary *)historicalInfo
 {
-    //NSLog(@"Historical Information: %@", historicalInfo);
+    
+    static BOOL wascalled = false;
+    if (!wascalled) {
+        wascalled = true;
+        //NSLog(@"Historical Information: %@", historicalInfo);
+        NSLog(@"%@", historicalInfo[@"history"][@"dailysummary"][0][@"precipi"]);
+    }
 }
 
 -(void)didClickAccessoryButtonForCallout:(AGSCallout *)callout

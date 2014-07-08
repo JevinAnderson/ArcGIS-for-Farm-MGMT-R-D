@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		582C2183196C606300083A7C /* JBBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C217E196C606300083A7C /* JBBarChartView.m */; };
+		582C2184196C606300083A7C /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C2180196C606300083A7C /* JBChartView.m */; };
+		582C2185196C606300083A7C /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C2182196C606300083A7C /* JBLineChartView.m */; };
+		582C2187196C613800083A7C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 582C2186196C613800083A7C /* LICENSE */; };
+		582C2189196C646000083A7C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 582C2188196C646000083A7C /* QuartzCore.framework */; };
 		5876E799196459B700A5919D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5876E798196459B700A5919D /* Foundation.framework */; };
 		5876E79B196459B700A5919D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5876E79A196459B700A5919D /* CoreGraphics.framework */; };
 		5876E79D196459B700A5919D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5876E79C196459B700A5919D /* UIKit.framework */; };
@@ -16,7 +21,7 @@
 		5876E7AC196459B700A5919D /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5876E7AA196459B700A5919D /* Main_iPhone.storyboard */; };
 		5876E7AF196459B700A5919D /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5876E7AD196459B700A5919D /* Main_iPad.storyboard */; };
 		5876E7B2196459B700A5919D /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5876E7B1196459B700A5919D /* MapViewController.m */; };
-		5876E7B5196459B700A5919D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5876E7B4196459B700A5919D /* SecondViewController.m */; };
+		5876E7B5196459B700A5919D /* WeatherGraphController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5876E7B4196459B700A5919D /* WeatherGraphController.m */; };
 		5876E7B7196459B700A5919D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5876E7B6196459B700A5919D /* Images.xcassets */; };
 		5876E7BE196459B700A5919D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5876E7BD196459B700A5919D /* XCTest.framework */; };
 		5876E7BF196459B700A5919D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5876E798196459B700A5919D /* Foundation.framework */; };
@@ -39,6 +44,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		582C217D196C606300083A7C /* JBBarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBarChartView.h; sourceTree = "<group>"; };
+		582C217E196C606300083A7C /* JBBarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBarChartView.m; sourceTree = "<group>"; };
+		582C217F196C606300083A7C /* JBChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartView.h; sourceTree = "<group>"; };
+		582C2180196C606300083A7C /* JBChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartView.m; sourceTree = "<group>"; };
+		582C2181196C606300083A7C /* JBLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLineChartView.h; sourceTree = "<group>"; };
+		582C2182196C606300083A7C /* JBLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLineChartView.m; sourceTree = "<group>"; };
+		582C2186196C613800083A7C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		582C2188196C646000083A7C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5876E795196459B700A5919D /* ArcGIS-for-Farm-MGMT-R-D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ArcGIS-for-Farm-MGMT-R-D.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5876E798196459B700A5919D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5876E79A196459B700A5919D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,8 +66,8 @@
 		5876E7AE196459B700A5919D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		5876E7B0196459B700A5919D /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		5876E7B1196459B700A5919D /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
-		5876E7B3196459B700A5919D /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		5876E7B4196459B700A5919D /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		5876E7B3196459B700A5919D /* WeatherGraphController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherGraphController.h; sourceTree = "<group>"; };
+		5876E7B4196459B700A5919D /* WeatherGraphController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherGraphController.m; sourceTree = "<group>"; };
 		5876E7B6196459B700A5919D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5876E7BC196459B700A5919D /* ArcGIS-for-Farm-MGMT-R-DTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ArcGIS-for-Farm-MGMT-R-DTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5876E7BD196459B700A5919D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -72,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				582C2189196C646000083A7C /* QuartzCore.framework in Frameworks */,
 				587B1367196B392C00D7C21C /* CoreData.framework in Frameworks */,
 				5876E79B196459B700A5919D /* CoreGraphics.framework in Frameworks */,
 				5876E79D196459B700A5919D /* UIKit.framework in Frameworks */,
@@ -92,6 +106,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		582C217C196C606300083A7C /* Jawbone - JBChartView */ = {
+			isa = PBXGroup;
+			children = (
+				582C2186196C613800083A7C /* LICENSE */,
+				582C217D196C606300083A7C /* JBBarChartView.h */,
+				582C217E196C606300083A7C /* JBBarChartView.m */,
+				582C217F196C606300083A7C /* JBChartView.h */,
+				582C2180196C606300083A7C /* JBChartView.m */,
+				582C2181196C606300083A7C /* JBLineChartView.h */,
+				582C2182196C606300083A7C /* JBLineChartView.m */,
+			);
+			name = "Jawbone - JBChartView";
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		5876E78C196459B700A5919D = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +144,7 @@
 		5876E797196459B700A5919D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				582C2188196C646000083A7C /* QuartzCore.framework */,
 				587B1366196B392B00D7C21C /* CoreData.framework */,
 				5876E798196459B700A5919D /* Foundation.framework */,
 				5876E79A196459B700A5919D /* CoreGraphics.framework */,
@@ -127,6 +157,7 @@
 		5876E79E196459B700A5919D /* ArcGIS-for-Farm-MGMT-R-D */ = {
 			isa = PBXGroup;
 			children = (
+				582C217C196C606300083A7C /* Jawbone - JBChartView */,
 				5876E7A7196459B700A5919D /* AppDelegate.h */,
 				5876E7A8196459B700A5919D /* AppDelegate.m */,
 				5876E7AA196459B700A5919D /* Main_iPhone.storyboard */,
@@ -135,8 +166,8 @@
 				5876E7D619646D9400A5919D /* Weather.m */,
 				5876E7B0196459B700A5919D /* MapViewController.h */,
 				5876E7B1196459B700A5919D /* MapViewController.m */,
-				5876E7B3196459B700A5919D /* SecondViewController.h */,
-				5876E7B4196459B700A5919D /* SecondViewController.m */,
+				5876E7B3196459B700A5919D /* WeatherGraphController.h */,
+				5876E7B4196459B700A5919D /* WeatherGraphController.m */,
 				5876E7B6196459B700A5919D /* Images.xcassets */,
 				5876E79F196459B700A5919D /* Supporting Files */,
 			);
@@ -248,6 +279,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				582C2187196C613800083A7C /* LICENSE in Resources */,
 				5876E7AF196459B700A5919D /* Main_iPad.storyboard in Resources */,
 				5876E7B7196459B700A5919D /* Images.xcassets in Resources */,
 				5876E7AC196459B700A5919D /* Main_iPhone.storyboard in Resources */,
@@ -271,9 +303,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5876E7B5196459B700A5919D /* SecondViewController.m in Sources */,
+				5876E7B5196459B700A5919D /* WeatherGraphController.m in Sources */,
 				5876E7A9196459B700A5919D /* AppDelegate.m in Sources */,
 				5876E7B2196459B700A5919D /* MapViewController.m in Sources */,
+				582C2184196C606300083A7C /* JBChartView.m in Sources */,
+				582C2183196C606300083A7C /* JBBarChartView.m in Sources */,
+				582C2185196C606300083A7C /* JBLineChartView.m in Sources */,
 				5876E7A5196459B700A5919D /* main.m in Sources */,
 				5876E7D719646D9400A5919D /* Weather.m in Sources */,
 			);
@@ -414,6 +449,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ArcGIS-for-Farm-MGMT-R-D/ArcGIS-for-Farm-MGMT-R-D-Prefix.pch";
 				INFOPLIST_FILE = "ArcGIS-for-Farm-MGMT-R-D/ArcGIS-for-Farm-MGMT-R-D-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-framework",
@@ -435,6 +471,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ArcGIS-for-Farm-MGMT-R-D/ArcGIS-for-Farm-MGMT-R-D-Prefix.pch";
 				INFOPLIST_FILE = "ArcGIS-for-Farm-MGMT-R-D/ArcGIS-for-Farm-MGMT-R-D-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-framework",
