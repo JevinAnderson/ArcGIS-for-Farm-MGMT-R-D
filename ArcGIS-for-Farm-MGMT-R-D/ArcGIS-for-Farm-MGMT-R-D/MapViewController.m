@@ -15,7 +15,8 @@
 @property (strong, nonatomic) AGSWebMap *webMap;
 @property (strong, nonatomic) AGSGraphicsLayer *graphicsLayer;
 @property (weak, nonatomic) AGSGraphic *currentGraphic;
-@property unsigned long currentFeatureId;
+@property (weak, nonatomic) NSString *previousFeatureId;
+@property (strong, nonatomic) NSString *currentFeatureId;
 @property double latitude, longitude;
 
 @property (strong, nonatomic) Weather *weather;
@@ -67,11 +68,15 @@
     
     AGSSpatialReference *webRef = [[AGSSpatialReference alloc] initWithWKID:WKID_WGS84];
     AGSPoint *newPoint = (AGSPoint *)[[AGSGeometryEngine defaultGeometryEngine] projectGeometry:geometry.envelope.center toSpatialReference:webRef];
-    _currentFeatureId = (unsigned long)[feature featureId];
+    _previousFeatureId = _currentFeatureId;
+    _currentFeatureId = [NSString stringWithFormat:@"%lu",(unsigned long)[feature featureId]];
     _latitude = newPoint.y;
     _longitude = newPoint.x;
     NSLog(@"Lat: <%lf> - Lon: <%lf>", _latitude, _longitude);
     
+    if (![_currentFeatureId isEqualToString:_previousFeatureId]) {
+        [_weather calculateStaticsForFeatureId:_currentFeatureId];
+    }
     
     [self startDataFetchingCycle];
     
@@ -83,13 +88,13 @@
     static BOOL alreadyStartedFetching = NO;
     if (!alreadyStartedFetching) {
         alreadyStartedFetching = YES;
-        [NSTimer scheduledTimerWithTimeInterval:60.0f target:self selector:@selector(fetchWeather:) userInfo:nil repeats:YES];
+        [NSTimer scheduledTimerWithTimeInterval:10.0f target:self selector:@selector(fetchWeather:) userInfo:nil repeats:YES];
     }
 }
 
 -(void)fetchWeather:(NSTimer *)timer
 {
-    [_weather getHistoricalWeatherForFeature:[NSString stringWithFormat:@"%lu", _currentFeatureId]
+    [_weather getHistoricalWeatherForFeature:_currentFeatureId
                                     latitude:_latitude
                                 andLongitude:_longitude];
 }
@@ -108,6 +113,7 @@
         //NSLog(@"Historical Information: %@", historicalInfo);
         NSLog(@"%@", historicalInfo[@"history"][@"dailysummary"][0][@"precipi"]);
     }
+    [_weather calculateStaticsForFeatureId:_currentFeatureId];
 }
 
 -(void)didClickAccessoryButtonForCallout:(AGSCallout *)callout

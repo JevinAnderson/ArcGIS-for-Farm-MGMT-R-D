@@ -70,7 +70,7 @@
             CGFloat numberOfDaysRecorded = [_weather.monthlyStatistics[month][0] floatValue];
             CGFloat totalPrecip = [_weather.monthlyStatistics[month][1] floatValue];
             
-            return totalPrecip / numberOfDaysRecorded;
+            return (totalPrecip / numberOfDaysRecorded) * 30.0;
         }else{
             return 0;
         }
@@ -102,7 +102,7 @@
         CGFloat numberOfDaysRecorded = [_weather.monthlyStatistics[month][0] floatValue];
         CGFloat totalPrecip = [_weather.monthlyStatistics[month][1] floatValue];
         
-        _inchesLabel.text = [NSString stringWithFormat:@"%.2f in", totalPrecip / numberOfDaysRecorded];
+        _inchesLabel.text = [NSString stringWithFormat:@"%.2f in", (totalPrecip / numberOfDaysRecorded) * 30.0];
     }else{
         _inchesLabel.text = [NSString stringWithFormat:@"N/A"];
     }

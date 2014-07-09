@@ -55,9 +55,6 @@
 
 -(void)getHistoricalWeatherForFeature:(NSString *)featureId latitude:(double)latitude andLongitude:(double)longitude
 {
-    if (![featureId isEqualToString:_lastFeatureSearchedFor]) {
-        [self calculateStaticsForFeatureId:featureId];
-    }
     _lastFeatureSearchedFor = featureId;
     
     if (!_weatherDictionary[featureId]) {
@@ -130,8 +127,6 @@
     
     NSMutableArray *historicalInformationArray = _weatherDictionary[featureId];
     for (NSDictionary *historicalInfo in historicalInformationArray) {
-        NSLog(@"Month: %@", historicalInfo[@"history"][@"dailysummary"][0][@"date"][@"mon"]);
-        NSLog(@"Precipitation: %@", historicalInfo[@"history"][@"dailysummary"][0][@"precipi"]);
         NSString *month = historicalInfo[@"history"][@"dailysummary"][0][@"date"][@"mon"];
         NSString *precip = historicalInfo[@"history"][@"dailysummary"][0][@"precipi"];
         if ([precip isEqualToString:@"T"]) {

@@ -20,6 +20,7 @@
 
 +(instancetype)sharedInstance;
 
+-(void)calculateStaticsForFeatureId:(NSString *)featureId;
 -(void)getHistoricalWeatherForFeature:(NSString *)featureId latitude:(double)latitude andLongitude:(double)longitude;
 
 @end
