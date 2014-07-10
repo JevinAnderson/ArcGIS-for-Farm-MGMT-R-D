@@ -19,7 +19,7 @@
 
 @implementation Voronoi
 
-const float screenHeight = ( 568.0f / 2.0f), screenWidth = ( 320.0f / 2.0f );
+const float screenHeight = ( 568.0f / 1.0f), screenWidth = ( 320.0f / 1.0f );
 float height, width;
 
 -(void)addVoroniGraphicsToTheMapView
@@ -58,7 +58,7 @@ float height, width;
     CGFloat hue = ( arc4random() % 256 / 256.0 );
     CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;
     CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;
-    return [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
+    return [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:.4];
 }
 
 -(void)addGraphicsToMapView

@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet AGSMapView *mapView;
 @property (weak, nonatomic) AGSFeatureLayer *featureLayer;
 @property (strong, nonatomic) Voronoi *voronoi;
+@property BOOL buttonWasPressed;
 
 @end
 
@@ -74,10 +75,21 @@
 {
     NSLog(@"Feature layer suceeded with Query");
     _voronoi.features = featureSet.features;
+    if (_buttonWasPressed) {
+        _buttonWasPressed = NO;
+        [_voronoi addVoroniGraphicsToTheMapView];
+    }
 }
 - (IBAction)voronoiAction:(id)sender
 {
-    [_voronoi addVoroniGraphicsToTheMapView];
+    _buttonWasPressed = YES;
+    AGSQuery *query = [AGSQuery new];
+    query.where = @"1=1";
+    query.outFields = @[@"*"];
+    query.returnGeometry = YES;
+    query.geometry = _mapView.visibleAreaEnvelope;
+    _featureLayer.queryDelegate = self;
+    [_featureLayer queryFeatures:query];
 }
 
 /*
