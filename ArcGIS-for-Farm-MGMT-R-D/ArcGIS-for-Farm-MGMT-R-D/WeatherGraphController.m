@@ -96,7 +96,6 @@
 - (void)barChartView:(JBBarChartView *)barChartView didSelectBarAtIndex:(NSUInteger)index touchPoint:(CGPoint)touchPoint
 {
     _statisticDisplayView.hidden = NO;
-    NSLog(@"Did select bar at index: %02lu", (unsigned long)index);
     NSString *month = [NSString stringWithFormat:@"%02lu", (unsigned long)index + 1];
     if (_weather.monthlyStatistics[month]) {
         CGFloat numberOfDaysRecorded = [_weather.monthlyStatistics[month][0] floatValue];
@@ -106,7 +105,6 @@
     }else{
         _inchesLabel.text = [NSString stringWithFormat:@"N/A"];
     }
-
 }
 
 - (void)didUnselectBarChartView:(JBBarChartView *)barChartView

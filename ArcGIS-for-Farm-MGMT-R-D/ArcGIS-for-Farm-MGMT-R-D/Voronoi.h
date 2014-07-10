@@ -14,6 +14,7 @@
 @property (weak, nonatomic) AGSMapView *mapView;
 @property (strong, nonatomic) NSArray *features;
 
+-(UIColor *)createRandomColor;
 -(void)addVoroniGraphicsToTheMapView;
 
 @end

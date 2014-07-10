@@ -33,6 +33,7 @@
 		5876E7D419645EE100A5919D /* ArcGIS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5876E7D319645EE100A5919D /* ArcGIS.bundle */; };
 		5876E7D719646D9400A5919D /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 5876E7D619646D9400A5919D /* Weather.m */; };
 		587B1367196B392C00D7C21C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587B1366196B392B00D7C21C /* CoreData.framework */; };
+		58DAD894196EEC67005134D8 /* TemperatureGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DAD893196EEC67005134D8 /* TemperatureGraphViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,8 @@
 		5876E7D519646D9400A5919D /* Weather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
 		5876E7D619646D9400A5919D /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
 		587B1366196B392B00D7C21C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		58DAD892196EEC67005134D8 /* TemperatureGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemperatureGraphViewController.h; sourceTree = "<group>"; };
+		58DAD893196EEC67005134D8 /* TemperatureGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemperatureGraphViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +181,8 @@
 				581287A3196DA241002D16DA /* ThiessenViewController.m */,
 				5876E7B3196459B700A5919D /* WeatherGraphController.h */,
 				5876E7B4196459B700A5919D /* WeatherGraphController.m */,
+				58DAD892196EEC67005134D8 /* TemperatureGraphViewController.h */,
+				58DAD893196EEC67005134D8 /* TemperatureGraphViewController.m */,
 				5876E7B6196459B700A5919D /* Images.xcassets */,
 				5876E79F196459B700A5919D /* Supporting Files */,
 			);
@@ -323,6 +328,7 @@
 				582C2185196C606300083A7C /* JBLineChartView.m in Sources */,
 				5876E7A5196459B700A5919D /* main.m in Sources */,
 				5876E7D719646D9400A5919D /* Weather.m in Sources */,
+				58DAD894196EEC67005134D8 /* TemperatureGraphViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

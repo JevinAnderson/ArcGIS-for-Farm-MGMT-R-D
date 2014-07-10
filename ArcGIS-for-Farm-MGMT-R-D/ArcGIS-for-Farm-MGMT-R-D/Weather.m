@@ -129,15 +129,20 @@
     for (NSDictionary *historicalInfo in historicalInformationArray) {
         NSString *month = historicalInfo[@"history"][@"dailysummary"][0][@"date"][@"mon"];
         NSString *precip = historicalInfo[@"history"][@"dailysummary"][0][@"precipi"];
+        NSString *temp = historicalInfo[@"history"][@"dailysummary"][0][@"meantempi"];
+        
         if ([precip isEqualToString:@"T"]) {
             continue;
         }
         
         if (!_monthlyStatistics[month]) {
-            _monthlyStatistics[month] = [NSMutableArray arrayWithArray:@[@1, [NSNumber numberWithFloat:[precip floatValue]]]];
+            _monthlyStatistics[month] = [NSMutableArray arrayWithArray:@[@1,
+                                                                         [NSNumber numberWithFloat:[precip floatValue]],
+                                                                         [NSNumber numberWithFloat:[temp floatValue]]]];
         }else{
             _monthlyStatistics[month][0] = [NSNumber numberWithInt:([(NSNumber *)_monthlyStatistics[month][0] intValue] + 1)];
             _monthlyStatistics[month][1] = [NSNumber numberWithFloat:([(NSNumber *)_monthlyStatistics[month][1] floatValue] + [precip floatValue])];
+            _monthlyStatistics[month][2] = [NSNumber numberWithFloat:([(NSNumber *)_monthlyStatistics[month][2] floatValue] + [temp floatValue])];
         }
     }
     _startYear = [historicalInformationArray lastObject][@"history"][@"dailysummary"][0][@"date"][@"year"];
